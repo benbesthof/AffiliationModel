@@ -25,7 +25,7 @@ class INF:
             Pandas dataframe of terrorism data
 
         """
-        self.df = pd.read_csv('terrorismp1.csv')
+        self.df = pd.read_csv('terrorismp3.csv')
 
     def rolestable(self):
         """ Read terrorsim datasetwith pandas and creating dataframe object
