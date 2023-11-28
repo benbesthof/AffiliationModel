@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "TerrorisminIsrael"
+name = "IsraelData"
 authors = [
     {name = "Benyamin Besthof", email = "bbesthof@mail.yu.edu"},
 ]
