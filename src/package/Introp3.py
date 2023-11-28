@@ -25,28 +25,28 @@ class intro:
         self.df = pd.read_csv(dfpath)
     
     def shape(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ count columns and rows in dataset
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+            
 
         Returns:
-            Pandas dataframe of terrorism data
+            shape of datset
 
         """
         shape = self.df.shape
         return shape
 
     def nullstypes(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ count nulls and view datatypes of each feature
 
         Args:
             self(series): original dataframe to be analyzed
             dfpath(str): name of csv file in which dataset is contained
 
         Returns:
-            Pandas dataframe of terrorism data
+           null counts and data type per feature 
 
         """
         nulls = self.df.isnull().sum()
@@ -54,14 +54,15 @@ class intro:
         return types, nulls
     
     def numdesc(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """description of numerical variables
+        creates a list of numerical variables and passes it into pandas describe function
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+            
 
         Returns:
-            Pandas dataframe of terrorism data
+            table describing the numerical variables in dataset 
 
         """
         num_var = [i for i in self.df.select_dtypes(exclude = object) if i != 'terrorist' and i != 'date']

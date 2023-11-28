@@ -40,10 +40,10 @@ class EDA:
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+          
 
         Returns:
-            Pandas dataframe of terrorism data
+            seaborn and matplotlib histograms displaying target variable distribution
 
         """
         fig, axes = plt.subplots(nrows =1, ncols=2)
@@ -55,14 +55,14 @@ class EDA:
         return plt.show()
     
     def histoage(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ plot histograms showing distribution of age among casualties
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+           
 
         Returns:
-            Pandas dataframe of terrorism data
+            seaborn and matplotlib histograms displaying distribution of values in age feature
 
         """
         fig, axes = plt.subplots(nrows = 1, ncols = 2, figsize =(12,10))
@@ -73,14 +73,14 @@ class EDA:
         return plt.show()
     
     def histomethods(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ plot histograms to display distribution of methods 
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+           
 
         Returns:
-            Pandas dataframe of terrorism data
+            seaborn and matplotlib histograms displaying distibution of values in methods feature
 
         """
         fig, axes = plt.subplots(nrows=1, ncols=2, figsize = (12,10))
@@ -91,14 +91,15 @@ class EDA:
         return plt.show()
     
     def astable(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ Aggregated sum of casualties killed in airstrike by affiliation. 
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+            
 
         Returns:
-            Pandas dataframe of terrorism data
+            table of aggregated data
+           
 
         """
         airstrikedf = self.df[self.df['method'] == 'Airstrike']
@@ -106,14 +107,14 @@ class EDA:
         return airstrikedf 
     
     def offensehisto(self): 
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ plot distribution of offenses committed by casualties 
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+      
 
         Returns:
-            Pandas dataframe of terrorism data
+           seaborn and matplotlib histograms displaying distibution of values in casualty offenses
 
         """
         fig, axes = plt.subplots(nrows=1, ncols=2, figsize = (12,10))
@@ -125,14 +126,14 @@ class EDA:
     
     
     def historegion(self): 
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ plot data to show distribution of casualties by region
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+            
 
         Returns:
-            Pandas dataframe of terrorism data
+            seaborn and matplotlib histograms displaying distibution of casualties by region
 
         """
         fig, axes = plt.subplots(nrows = 1, ncols = 2, figsize =(12,10))

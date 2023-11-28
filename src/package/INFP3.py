@@ -28,42 +28,45 @@ class INF:
         self.df = pd.read_csv('terrorismp3.csv')
 
     def rolestable(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ Aggregate casualty count, average committed offenses, and average age by role within terrorist organizations
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+       
 
         Returns:
-            Pandas dataframe of terrorism data
+            Table displaying aggregated data calculating casualties per role within terrorist organizations, average offenses committed by casualties in that organization, and average age of casualties belonging to each organization. 
 
         """
         rolesinfo = self.df[self.df['terrorist'] == 1].groupby('role').agg(rolecount = ('role', 'count'), offensesavg = ('offenses', 'mean'), avage = ('age', 'mean')).reset_index()
         return rolesinfo
 
     def orgcount(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ Aggregate casualty count, total committed offenses, and average age by role within terrorist organizations
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+       
 
         Returns:
-            Pandas dataframe of terrorism data
+            Table displaying aggregated data calculating casualties per role within terrorist organizations, total offenses committed by casualties in that organization, and average age of casualties belonging to each organization. 
 
+        
         """
         orgscount = self.df[self.df['terrorist'] == 1].groupby('affiliation').agg(totaloffenses =('offenses', 'count'), avage = ('age', 'mean')).reset_index()
         return orgscount 
     
     def snsbar(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
+        """ Plot seaborn bar chart displaying total offenses committed by each terrorist organization
+            Uses aggregated data returned from orgscount
 
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+
 
         Returns:
-            Pandas dataframe of terrorism data
+            seaborn bar chart displaying total offenses committed by each terrorist organization
+ 
 
         """
         orgscount = self.df[self.df['terrorist'] == 1].groupby('affiliation').agg(totaloffenses =('offenses', 'count'), avage = ('age', 'mean')).reset_index()
@@ -72,14 +75,15 @@ class INF:
         return plt.show()
     
     def pltbar(self):
-        """ Read terrorsim datasetwith pandas and creating dataframe object
-
+        """ Plot matplotlib bar chart displaying total offenses committed by each terrorist organization
+            Uses aggregated data returned from orgscount
         Args:
             self(series): original dataframe to be analyzed
-            dfpath(str): name of csv file in which dataset is contained
+
 
         Returns:
-            Pandas dataframe of terrorism data
+            matplotlib bar chart displaying total offenses committed by each terrorist organization
+ 
 
         """
         orgscount = self.df[self.df['terrorist'] == 1].groupby('affiliation').agg(totaloffenses =('offenses', 'count'), avage = ('age', 'mean')).reset_index()
