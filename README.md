@@ -1,2 +1,2 @@
 # Casualty Affiliation Model 
-Refer to TerminatingTerrorismp3.ipynb for description 
+Refer to TerminatingTerrorismP3.ipynb for description 
