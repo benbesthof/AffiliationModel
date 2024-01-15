@@ -1,2 +1,2 @@
-# IsraelData
-Project 3 of DAV5400
+# Casualty Affiliation Model 
+Refer to TerminatingTerrorismp3.ipynb for description 
